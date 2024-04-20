@@ -23,7 +23,7 @@
   </head>
   <body>
     <audio id="backgroundMusic" autoplay loop>
-      <source src="/hpbd.mp3" type="audio/mpeg" />
+      <source src="hpbd.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
     <div id="wrapper">
@@ -187,18 +187,7 @@
       </div>
     </div>
   </body>
-  <script>
-    // Pause the audio if the user clicks on it
-    document
-      .getElementById("backgroundMusic")
-      .addEventListener("click", function () {
-        if (this.paused) {
-          this.play();
-        } else {
-          this.pause();
-        }
-      });
-  </script>
+
   <script>
     let datetxt = "20-04-2002";
     let datatxtletter =
