@@ -68,11 +68,11 @@
         <div class="right">
           <div class="box__account">
             <div class="image">
-              <img src="./images/love.jpg" alt="" />
+              <img src="./images/pt.jpg" alt="" />
             </div>
             <div class="name">
               <i class="fa-solid fa-heart"></i>
-              <span>Trương Thị Phương Thảo</span>
+              <span>Phương Trinh</span>
               <i class="fa-solid fa-heart"></i>
             </div>
             <div class="balloon_one">
@@ -189,10 +189,17 @@
   </body>
 
   <script>
-    let datetxt = "20-04-2002";
+    document.addEventListener("DOMContentLoaded", function () {
+      // Phát nhạc tự động khi trang được tải lên
+      document.getElementById("backgroundMusic").play();
+
+      // Kích hoạt sự kiện click của nút phát nhạc sau khi trang được tải
+      document.getElementById("playButton").click();
+    });
+    let datetxt = "16-05-2002";
     let datatxtletter =
-      "Hi Bé Thảo. Thảo là một cô gái rất đặc biệt. Nhân rất vui vì được gặp Thảo. Ngày hôm nay Nhân chúc Thảo mọi điều an lành, thật nhiều sức khỏe, thật nhiều niềm vui. Nhân hy vọng Thảo sẽ luôn tươi cười, năng động như thế này. Mừng sinh nhật Thảo.💕";
-    let titleLetter = "Gửi em";
+      "Hi Phương Trinh. Nay Là Một Ngày Rất Đặc Biệt Với Trinh. Nhân rất vui vì được gặp Trinh. Ngày hôm nay Nhân chúc Trinh mọi điều an lành, thật nhiều sức khỏe, thật nhiều niềm vui. Nhân hy vọng Trinh sẽ luôn tươi cười, năng động như thế này. Nhớ Đừng Uống VolKa Pha Sì Ting Nữa Nha :))). Bữa Nào Làm Kèo Solo Sau Nha. Chúc Mừng sinh nhật Trinh.💕";
+    let titleLetter = "Gửi Trinh";
     let charArrDate = datetxt.split("");
     let charArrDateLetter = datatxtletter.split("");
     let charArrTitle = titleLetter.split("");
@@ -220,6 +227,23 @@
 
     var intervalContent;
     var intervalTitle;
+    $("#btn__letter").on("click", function () {
+      // Phát nhạc khi người dùng nhấp vào nút
+      var audioElement = document.getElementById("backgroundMusic");
+      var playPromise = audioElement.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then((_) => {
+            // Phát nhạc thành công
+            console.log("Music is playing...");
+          })
+          .catch((error) => {
+            // Xử lý lỗi phát nhạc
+            console.log("Failed to play music: ", error);
+          });
+      }
+    });
     $("#btn__letter").on("click", function () {
       $(".box__letter").slideDown();
       setTimeout(function () {
@@ -272,6 +296,7 @@
       document.querySelectorAll(".heart").forEach((item) => {
         item.classList.remove("animation");
       });
+
       $(".box__letter").slideUp();
       $(".letter__border").slideUp();
     });
