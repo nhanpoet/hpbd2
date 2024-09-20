@@ -468,7 +468,7 @@ body {
 .box__letter .letter__border{
     position: absolute;
     width: 55vw;
-    height: 450px;
+    height: 520px;
     background-color: var(--color-white);
     border-radius: 27px;
     padding: 17px;
@@ -526,7 +526,7 @@ body {
 }
 .content__letter .left #heart__letter{
     opacity: 0;
-    width: 100%;
+    width: 85%;
 }
 #heart__letter.animationOp{
     animation: opacityHeart 1s 1s forwards;
